@@ -2,7 +2,7 @@
 
 class DbManager{
 
-    protected $bdd;
+    protected $bddConnection;
     private $host = 'localhost';
     private $dbName = 'blog';
     private $username = 'root';
@@ -12,8 +12,8 @@ class DbManager{
     {
 
         try {
-            $this->bdd = new PDO('mysql:host='.$this->host.'; dbname='. $this->dbName , $this->username, $this->password);
-            $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->bddConnection = new PDO('mysql:host='.$this->host.'; dbname='. $this->dbName , $this->username, $this->password);
+            $this->bddConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo('connected');
         }
         catch(Exception $e) {

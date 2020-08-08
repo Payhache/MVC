@@ -1,5 +1,6 @@
  <?php 
- require_once('MVC\model\manager\DbManager.php');
+ require_once('require.php');
 
- $bddConnected = new DbManager(); 
  
+ $bddConnected = new ArticleManager(); 
+ var_dump($bddConnected->selectAllArticles());
