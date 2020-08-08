@@ -1,6 +1,3 @@
-<?php 
-var_dump($article);
-?>
 
 <html>
     <head>
