@@ -13,4 +13,14 @@ class ArticleManager extends DbManager {
         }
         return $articles;
     }
+
+    public function selectOneArticle($id) {
+        $sqlRequestOneArticle = $this->bddConnection->prepare('SELECT * FROM articles WHERE id = ?');
+        $sqlRequestOneArticle->bindParam(1, $id);
+        $sqlRequestOneArticle->execute();
+        $resultSqlRequestOneArticle = $sqlRequestOneArticle->fetch();
+        $article = new Article($resultSqlRequestOneArticle['title'], $resultSqlRequestOneArticle['content'], $resultSqlRequestOneArticle['author'], $resultSqlRequestOneArticle['id']);
+        
+        return $article;
+    }
 }
