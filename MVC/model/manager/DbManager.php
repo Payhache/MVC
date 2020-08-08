@@ -14,7 +14,6 @@ class DbManager{
         try {
             $this->bddConnection = new PDO('mysql:host='.$this->host.'; dbname='. $this->dbName , $this->username, $this->password);
             $this->bddConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo('connected');
         }
         catch(Exception $e) {
             die('Erreur '.$e->getMessage());
