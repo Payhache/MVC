@@ -23,4 +23,12 @@ class ArticleManager extends DbManager {
         
         return $article;
     }
+
+    public function deleteOneArticle($id) {
+        echo 'je suis dans l\'article manager';
+        var_dump($id);
+        $sqlRequestOneArticle = $this->bddConnection->prepare('DELETE FROM articles WHERE id = ?');
+        $sqlRequestOneArticle->bindParam(1, $id);
+        $sqlRequestOneArticle->execute();
+    }
 }
