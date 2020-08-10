@@ -7,6 +7,6 @@
 <label for="content">contenu de votre article</label>
 <input type="textarea" name="content">
 <label for="author">Auteur</label>
-<input type="textarea" name="author"> test</input>
+<textarea  name="author"> </textarea>
 <button type="submit"> Envoyer Article</button>
 </form>

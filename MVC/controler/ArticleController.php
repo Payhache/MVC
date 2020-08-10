@@ -32,4 +32,9 @@ class ArticleController {
         $article = $articleManager->selectOneArticle($id);
         require('MVC\view\editArticle_view.php');
     }
+
+    public function postEditArticle() {
+        
+        $article = new Article($_POST['title'],$_POST['content'],$_POST['author']);
+    }
 }

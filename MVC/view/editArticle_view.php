@@ -11,10 +11,10 @@
 <label for="title">titre de votre article</label>
 <input class="form-control w-75" type="text" name="title" value="<?= $article->getTitle() ?>">
 </div>
-<div class="form-group">
 
+<div class="form-group">
 <label for="content">contenu de votre article</label>
-<input class="form-control w-75" type="textarea" name="content" value="<?= $article->getContent() ?>">
+<textarea class="form-control w-75" rows="15"  name="content"><?= $article->getContent() ?> </textarea>
 </div>
 
 <div class="form-group">
