@@ -12,7 +12,7 @@ class DbManager{
     {
 
         try {
-            $this->bddConnection = new PDO('mysql:host='.$this->host.'; dbname='. $this->dbName , $this->username, $this->password);
+            $this->bddConnection = new PDO('mysql:host='.$this->host.'; dbname='.  $this->dbName . ';charset=utf8', $this->username, $this->password);
             $this->bddConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(Exception $e) {
