@@ -37,5 +37,7 @@ class ArticleController {
         $articleManager= new ArticleManager();
         $article = new Article($_POST['title'],$_POST['content'],$_POST['author'], $id);
         $articleManager->updateArticle($article);
+        
+        header('location: index.php');
     }
 }

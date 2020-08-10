@@ -47,12 +47,12 @@ class ArticleManager extends DbManager {
         $title = $article->getTitle();
         $content = $article->getContent();
         $author = $article->getAuthor();
+        $id = $article->getId();
         $sqlUpdateArticle = $this->bddConnection->prepare('UPDATE articles SET title=?, content=?, author=? WHERE id = ?');
         $sqlUpdateArticle->bindParam(1, $title);
         $sqlUpdateArticle->bindParam(2, $content);
         $sqlUpdateArticle->bindParam(3, $author);
         $sqlUpdateArticle->bindParam(4, $id);
         $sqlUpdateArticle->execute();
-
     }
 }
