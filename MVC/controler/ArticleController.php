@@ -12,6 +12,6 @@ class ArticleController {
     public function deleteArticle($id) {
         $articleManager = new ArticleManager();
         $articleManager->deleteOneArticle($id);
-        require('MVC\view\home_view.php');
+        header('Location: index.php');
     }
 }
