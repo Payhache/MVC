@@ -26,4 +26,10 @@ class ArticleController {
 
         header('location: index.php');
     }
+
+    public function editArticle($id) {
+        $articleManager = new ArticleManager();
+        $article = $articleManager->selectOneArticle($id);
+        require('MVC\view\editArticle_view.php');
+    }
 }

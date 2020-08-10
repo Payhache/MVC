@@ -9,8 +9,9 @@
             <h2><?= $article->getTitle(); ?></h2>
             <p><?= $article->getcontent(); ?></p>
             <p><?= $article->getAuthor(); ?></p>
-            <a href="index.php?controller=detail&id=<?= $article->getId()?>">Detail article</a>
-            <a href="index.php?controller=home&action=delete&id=<?= $article->getId()?>">Supprimer article</a>
+            <a class="btn btn-primary m-2" href="index.php?controller=detail&id=<?= $article->getId()?>">Detail article</a>
+            <a class="btn btn-primary m-2 " href="index.php?controller=home&action=delete&id=<?= $article->getId()?>">Supprimer article</a>
+            <a class="btn btn-primary m-2 " href="index.php?controller=article&action=editArticle&id=<?= $article->getId()?>">Editer l'article</a>
         <?php }; ?>
 
     </body>

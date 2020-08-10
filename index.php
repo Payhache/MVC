@@ -20,4 +20,11 @@ require_once('require.php');
     } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'postArticle') {
         $articleControleur = new ArticleController();
         $articleControleur->postArticle();
+    
+    } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'editArticle' && isset($_GET['id'])) {
+        $articleControleur = new ArticleController();
+        $articleControleur->editArticle($_GET['id']);
+   
+    } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'postEditArticle') {
+        echo 'je suis la ';
     }
