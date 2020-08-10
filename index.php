@@ -12,4 +12,12 @@ require_once('require.php');
     } else if ($_GET['controller'] === 'home' && $_GET['action'] === 'delete' && isset($_GET['id'])) {
         $articleControleur = new ArticleController();
         $articleControleur->deleteArticle($_GET['id']);
+    
+    } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'writeArticle') {
+        $articleControleur = new ArticleController();
+        $articleControleur->writeNewArticle();
+   
+    } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'postArticle') {
+        $articleControleur = new ArticleController();
+        $articleControleur->postArticle();
     }
