@@ -33,8 +33,9 @@ class ArticleController {
         require('MVC\view\editArticle_view.php');
     }
 
-    public function postEditArticle() {
-        
-        $article = new Article($_POST['title'],$_POST['content'],$_POST['author']);
+    public function postEditArticle($id) {
+        $articleManager= new ArticleManager();
+        $article = new Article($_POST['title'],$_POST['content'],$_POST['author'], $id);
+        $articleManager->updateArticle($article);
     }
 }

@@ -27,5 +27,5 @@ require_once('require.php');
    
     } else if ($_GET['controller'] === 'article' && $_GET['action'] === 'postEditArticle') {
         $articleControleur = new ArticleController();
-        $articleControleur->postEditArticle();
+        $articleControleur->postEditArticle($_GET['id']);
     }
