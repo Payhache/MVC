@@ -36,11 +36,29 @@ class ArticleController {
     public function postEditArticle($id) {
         $articleManager= new ArticleManager();
         $article = $articleManager->selectOneArticle($id);
-        $article->setTitle($_POST['title']);
-        $article->setContent($_POST['content']);
-        $article->setAuthor($_POST['author']);
-        $articleManager->updateArticle($article);
-        
-        header('location: index.php');
+        $errors = $this->checkForm();
+        if(!count($errors)) {
+            $article->setTitle($_POST['title']);
+            $article->setContent($_POST['content']);
+            $article->setAuthor($_POST['author']);
+            $articleManager->updateArticle($article);
+            header('location: index.php');
+        } else {
+            require_once('MVC\view\editArticle_view.php');
+        }
+    }
+
+    public function checkform() {
+        $errors = [];
+        if(empty($_POST['title'])) {
+            $errors[] = 'il faut remplir le titre';
+        }
+        return $errors;
+    }
+
+    public function displayErrors($errors) {
+        foreach ($errors as $error) {
+            echo($error);
+        }
     }
 }

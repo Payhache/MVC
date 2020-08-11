@@ -26,4 +26,9 @@
             <button class="btn btn-primary" type="submit"> Envoyer Article</button>
         </form>
     </body>
+    <?php 
+     if(count($errors)) {
+         $this->displayErrors($errors);
+     }
+    ?>
 </html>
