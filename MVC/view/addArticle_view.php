@@ -3,6 +3,8 @@
         <?php require_once('parts\meta.html'); ?>
     </head>
     <body>
+    <a class="btn btn-secondary m-2" href="index.php"> Retour accueil</a>
+
         <h1> Ajoutez un article</h1>
 
 
