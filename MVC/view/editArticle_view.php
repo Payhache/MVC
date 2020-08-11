@@ -3,7 +3,7 @@
         <?php require_once('parts\meta.html'); ?>
     </head>
     <body>
-        <h1> Editez votre article </h1>
+        <h1> Editez votre article ici </h1>
 
 
         <form class="w-75 m-auto" action="index.php?controller=article&action=postEditArticle&id=<?= $article->getId() ?>" method="post">
