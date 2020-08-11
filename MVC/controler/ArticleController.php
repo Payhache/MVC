@@ -35,7 +35,10 @@ class ArticleController {
 
     public function postEditArticle($id) {
         $articleManager= new ArticleManager();
-        $article = new Article($_POST['title'],$_POST['content'],$_POST['author'], $id);
+        $article = $articleManager->selectOneArticle($id);
+        $article->setTitle($_POST['title']);
+        $article->setContent($_POST['content']);
+        $article->setAuthor($_POST['author']);
         $articleManager->updateArticle($article);
         
         header('location: index.php');
