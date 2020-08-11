@@ -51,8 +51,16 @@ class ArticleController {
     public function checkform() {
         $errors = [];
         if(empty($_POST['title'])) {
-            $errors[] = 'il faut remplir le titre';
+            $errors[] = '- Il faut remplir un titre';
         }
+        if(empty($_POST['content'])) {
+            $errors[] = '- Votre article ne peut pas être vide';
+        }
+        if(empty($_POST['author'])) {
+            $errors[] = '- Vous devez signer votre article';
+        }
+
+
         return $errors;
     }
 
