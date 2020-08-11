@@ -22,9 +22,13 @@ class ArticleController {
     public function postArticle() {
         $article = new Article($_POST['title'],$_POST['content'],$_POST['author']);
         $articleManager = new ArticleManager();
+        $errors = $this->checkForm();
+        if(!count($errors)) {
         $articleManager->postOneArticle($article);
-
         header('location: index.php');
+        } else {
+            require_once('MVC\view\addArticle_view.php');
+        }
     }
 
     public function editArticle($id) {
