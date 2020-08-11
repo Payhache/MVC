@@ -4,6 +4,6 @@ class DefaultController {
     public function home() {
         $articleManager = new ArticleManager();
         $articles = $articleManager->selectAllArticles();
-        require('MVC\view\home_view.php');
+        require_once('MVC\view\home_view.php');
     }
 }

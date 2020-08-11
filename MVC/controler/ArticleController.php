@@ -5,8 +5,10 @@ class ArticleController {
     
     public function detailArticle($id) {
         $articleManager = new ArticleManager();
+        $commentManager = new CommentManager();
         $article = $articleManager->selectOneArticle($id);
-        require('MVC\view\detailArticle_view.php');
+        $comments = $commentManager->selectAllComments($id);
+        require_once('MVC\view\detailArticle_view.php');
     }
     
     public function deleteArticle($id) {
