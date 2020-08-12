@@ -5,7 +5,7 @@
     <body>
         <a class="btn btn-secondary m-2" href="index.php"> Retour accueil</a>
         <h1>new comment</h1>
-        <form class="w-75 m-auto" action="index.php?controller=comment&action=postComment" method="post">
+        <form class="w-75 m-auto" action="index.php?controller=comment&action=postComment&id=<?php echo $_GET['id'];  ?>" method="post">
             <div class="form-group mt-5">
                 <label for="pseudo">Pseudo</label>
                 <input class="form-control w-75" type="text" name="pseudo">

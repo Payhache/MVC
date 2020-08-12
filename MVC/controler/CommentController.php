@@ -11,11 +11,11 @@ class CommentController {
        require_once('MVC\view\addComment_view.php');
     }
 
-    public function postComment() {
-        $comment = new Comment($_POST['pseudo'], $_POST['content']);
+    public function postComment($idArticle) {
+        $comment = new Comment($_POST['pseudo'], $_POST['content'], $idArticle);
         $commentManager = new CommentManager();
         $commentManager->postComment($comment);
 
-        header('location: index.php');
+        header('Location: index.php?controller=detail&id='.$idArticle);
     }
 }

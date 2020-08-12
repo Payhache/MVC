@@ -1,6 +1,7 @@
  <?php
     require_once('require.php');
 
+    
     $commentController = new CommentController();
     $articleControleur = new ArticleController();
     
@@ -30,7 +31,7 @@
     } else if ($_GET['controller'] === 'comment' && $_GET['action'] === 'writeComment') {
         $commentController->writeComment();
 
-    } else if ($_GET['controller'] === 'comment' && $_GET['action'] === 'postComment') {
-        $commentController->postComment();
+    } else if ($_GET['controller'] === 'comment' && $_GET['action'] === 'postComment' && isset($_GET['id'])) {
+        $commentController->postComment($_GET['id']);
     }
     

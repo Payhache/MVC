@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="btn btn-primary mt-5 mb-5"href="index.php?controller=comment&action=writeComment">Poster un nouveau commentaire</a>
+    <a class="btn btn-primary mt-5 mb-5"href="index.php?controller=comment&action=writeComment&id=<?php echo $_GET['id'];  ?>">Poster un nouveau commentaire</a>
 </div>
 
 <div class="container">
