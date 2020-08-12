@@ -1,11 +1,7 @@
 <html>
-
-<head>
-    <?php require_once('parts\meta.html'); ?>
-</head>
-
+    <?php   require_once('parts\meta.html'); 
+            require_once('MVC\view\parts\header.php'); ?>
 <body>
-    <a class="btn btn-secondary m-2" href="index.php?controller=article&action=writeArticle"> Ajouter un Article</a>
     <h1 class="m-5 text-center"> Mon super blog !</h1>
     <div class="article containair  m-auto  w-75">
     <?php foreach ($articles as $article) { ?>

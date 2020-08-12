@@ -1,12 +1,8 @@
 <html>
-
-<head>
-    <?php require_once('parts\meta.html'); ?>
-</head>
+    <?php   require_once('parts\meta.html'); 
+            require_once('MVC\view\parts\header.php'); ?>
 
 <body>
-    <a class="btn btn-secondary m-2" href="index.php"> Retour accueil</a>
-
     <h1> Editez votre article ici </h1>
     <div class="container text-center text-danger">
     <?php

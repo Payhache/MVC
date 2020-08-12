@@ -1,9 +1,7 @@
 <html>
-    <head>
-        <?php require_once('parts\meta.html'); ?>
-    </head>
+    <?php   require_once('parts\meta.html'); 
+            require_once('MVC\view\parts\header.php'); ?>
     <body>
-        <a class="btn btn-secondary m-2" href="index.php"> Retour accueil</a>
         <h1>new comment</h1>
         <form class="w-75 m-auto" action="index.php?controller=comment&action=postComment&id=<?php echo $_GET['id'];  ?>" method="post">
             <div class="form-group mt-5">
