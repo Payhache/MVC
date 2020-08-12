@@ -1,7 +1,6 @@
  <?php
     require_once('require.php');
 
-    
     $commentController = new CommentController();
     $articleControleur = new ArticleController();
     

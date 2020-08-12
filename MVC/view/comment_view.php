@@ -4,7 +4,9 @@
 
 <div class="container">
     <?php foreach($comments as $comment) { ?>
-        <h2> Commentaire rédigé par <?php echo $comment->getPseudo(); ?></h2>
-        <p> <?php echo $comment->getContent(); ?></p>
+        <div class="comment">
+            <h2 class="author"><i class="fas fa-user-edit"></i> Commentaire rédigé par <span><?php echo $comment->getPseudo(); ?></span></h2>
+            <p> <?php echo $comment->getContent(); ?></p>
+        </div>
     <?php } ?>
 </div>
