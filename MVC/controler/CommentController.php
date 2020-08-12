@@ -20,7 +20,7 @@ class CommentController {
     }
 
     public function displayStars($stars){
-        for ($i=0; $i < $stars->getNote() ; $i++) { 
+        for ($i=0; $i < $stars->getNote() && $i < 5; $i++) { 
             echo('<i class="fas fa-star"></i>');
         }
         for ($i = $stars->getNote() ; $i < 5 ; $i++) { 

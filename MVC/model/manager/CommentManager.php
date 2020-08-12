@@ -19,7 +19,7 @@ class CommentManager extends DbManager {
         return $comments;
     }
 
-    public function postComment($comment) {
+    public function postComment(Comment $comment) {
 
         $pseudo = $comment->getPseudo();
         $content = $comment->getContent();

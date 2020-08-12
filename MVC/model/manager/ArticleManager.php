@@ -30,7 +30,7 @@ class ArticleManager extends DbManager {
         $sqlRequestOneArticle->execute();
     }
 
-    public function postOneArticle($article) {
+    public function postOneArticle(Article $article) {
         $title = $article->getTitle();
         $content = $article->getContent();
         $author = $article->getAuthor();
@@ -43,7 +43,7 @@ class ArticleManager extends DbManager {
 
     }
 
-    public function updateArticle($article) {
+    public function updateArticle(Article $article) {
         $title = $article->getTitle();
         $content = $article->getContent();
         $author = $article->getAuthor();
