@@ -10,10 +10,5 @@
             <p><?= $article->getContent() ?></p>
             <h2> Article écrit par <?php echo $article->getAuthor() ?></h2>
         </div>
-        <div class="container">
-            <?php foreach($comments as $comment) { ?>
-                <h2><?php echo $comment->getPseudo(); ?></h2>
-            <?php } ?>
-        </div>
     </body>
 </html>

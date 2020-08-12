@@ -5,9 +5,7 @@ class ArticleController {
     
     public function detailArticle($id) {
         $articleManager = new ArticleManager();
-        $commentManager = new CommentManager();
         $article = $articleManager->selectOneArticle($id);
-        $comments = $commentManager->selectAllComments($id);
         require_once('MVC\view\detailArticle_view.php');
     }
     
