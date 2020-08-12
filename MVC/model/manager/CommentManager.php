@@ -18,4 +18,14 @@ class CommentManager extends DbManager {
         } 
         return $comments;
     }
+
+    public function postComment($comment) {
+        $pseudo = $comment->getPseudo();
+        $content = $comment->getContent();
+        $sqlPostComment = $this->bddConnection->prepare('INSERT INTO comments (pseudo, content) VALUE (?,?)' );
+        $sqlPostComment->bindParam(1, $pseudo);
+        $sqlPostComment->bindParam(2, $content);
+        $sqlPostComment->execute();
+        $comment->setId($this->bddConnection->lastInsertId());
+    }
 }
