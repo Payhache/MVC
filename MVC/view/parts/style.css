@@ -23,8 +23,16 @@ span {
     text-transform: capitalize;
 }
 
+
+.stars {
+    color:#d4af59;
+}
 .comment {
     box-shadow: darkgrey 0 0rem 0.5rem 0;
     padding: 0.4rem;
     margin: 0.2rem;
+}
+
+.commentContent {
+    display: block;
 }

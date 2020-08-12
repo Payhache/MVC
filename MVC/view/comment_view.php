@@ -5,8 +5,17 @@
 <div class="container">
     <?php foreach($comments as $comment) { ?>
         <div class="comment">
-            <h2 class="author"><i class="fas fa-user-edit"></i> Commentaire rédigé par <span><?php echo $comment->getPseudo(); ?></span></h2>
-            <p> <?php echo $comment->getContent(); ?></p>
+
+            <div class="test">
+                <h2 class="author"><i class="fas fa-user-edit"></i> Commentaire rédigé par <span><?php echo $comment->getPseudo(); ?></span></h2> 
+            </div>
+            <div class="starsContainer">
+               <p> Note :  <span class="stars"><?php $this->displayStars($comment); ?></span> </p>
+            </div>
+
+            <div class="commentContent">
+                <p > <?php echo $comment->getContent(); ?></p>
+            </div>
         </div>
     <?php } ?>
 </div>

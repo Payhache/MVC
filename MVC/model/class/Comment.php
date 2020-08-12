@@ -4,14 +4,17 @@ class Comment {
     protected $id;
     protected $pseudo;
     protected $content;
+    protected $note;
     protected $idArticle;
 
-    public function __construct($pseudo, $content, $idArticle=null,$id=null)
+    public function __construct($pseudo, $content, $note, $idArticle=null,$id=null)
     {
         $this->id = $id;
         $this->pseudo = $pseudo;
         $this->content = $content;
+        $this->note = $note;
         $this->idArticle =  $idArticle;
+
     }
 
     /**
@@ -90,6 +93,26 @@ class Comment {
     public function setIdArticle($idArticle)
     {
         $this->idArticle = $idArticle;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of note
+     */ 
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Set the value of note
+     *
+     * @return  self
+     */ 
+    public function setNote($note)
+    {
+        $this->note = $note;
 
         return $this;
     }

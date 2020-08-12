@@ -8,13 +8,13 @@ class CommentManager extends DbManager {
 
     public function selectAllComments($id) {
         $comments = [];
-        $sqlRequestSelectAllComments = $this->bddConnection->prepare('SELECT comments.pseudo, comments.content, comments.id, comments.idArticle FROM comments
+        $sqlRequestSelectAllComments = $this->bddConnection->prepare('SELECT comments.pseudo, comments.content, comments.id, comments.note, comments.idArticle FROM comments
         LEFT JOIN articles ON articles.id = comments.idArticle WHERE articles.id = ? ORDER BY comments.id DESC');
         $sqlRequestSelectAllComments->bindParam(1, $id);
         $sqlRequestSelectAllComments->execute();
         $result = $sqlRequestSelectAllComments->fetchAll();
         foreach($result as $comment) {
-            $comments[] = new Comment($comment['pseudo'], $comment['content'], $comment['idArticle'], $comment['id']);
+            $comments[] = new Comment($comment['pseudo'], $comment['content'], $comment['note'], $comment['idArticle'], $comment['id']);
         } 
         return $comments;
     }
@@ -23,11 +23,13 @@ class CommentManager extends DbManager {
 
         $pseudo = $comment->getPseudo();
         $content = $comment->getContent();
+        $note = $comment->getNote();
         $idArticle= $comment->getIdArticle();
-        $sqlPostComment = $this->bddConnection->prepare('INSERT INTO comments (pseudo, content, idArticle) VALUE (?,?,?)' );
+        $sqlPostComment = $this->bddConnection->prepare('INSERT INTO comments (pseudo, content, note, idArticle) VALUE (?,?,?,?)' );
         $sqlPostComment->bindParam(1, $pseudo);
         $sqlPostComment->bindParam(2, $content);
-        $sqlPostComment->bindParam(3, $idArticle);
+        $sqlPostComment->bindParam(3, $note);
+        $sqlPostComment->bindParam(4, $idArticle);
         $sqlPostComment->execute();
         $comment->setId($this->bddConnection->lastInsertId());
     }
